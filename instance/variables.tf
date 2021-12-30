@@ -13,4 +13,7 @@ variable "instance_count" {
   default = 1
 }
 
+variable "subnet_ids" {
+  default =  [ "subnet-39602f72", "subnet-85b597fc" ]
+}
 
