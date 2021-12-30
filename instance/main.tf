@@ -21,7 +21,7 @@ data "aws_ami" "centos" {
 }
 
 data "template_file" "init" {
-  template = "${file("${path.module}/httpdata.tpl")}"
+  template = "${file("${path.module}/userdata.tpl")}"
 }
 
 
