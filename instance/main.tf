@@ -29,6 +29,7 @@ resource "aws_instance" "web_server" {
   ami           = var.ami_id
   instance_type = var.instance
   count         = var.instance_count
+  subnet_id     = "${element(var.subnet_ids, count.index)}"
   user_data     = "${data.template_file.init.rendered}"
 
   tags = {
