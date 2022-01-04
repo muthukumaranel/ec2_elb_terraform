@@ -1,7 +1,7 @@
 data "aws_availability_zones" "available" {}
 
 data "aws_ami" "centos" {
-  owners      = ["679593333241"]
+  owners      = ["445425982647"]
   most_recent = true
 
   filter {
