@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "ingress-lbs"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: first-service
+            port:
+              number: 5000
+      - path: /app1
+        pathType: Prefix
+        backend:
+          service:
+            name: second-service
+            port:
+              number: 6000
+      - path: /web
+        pathType: Prefix
+        backend:
+          service:
+            name: third-service
+            port:
+              number: 7000
