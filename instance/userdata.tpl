@@ -5,6 +5,6 @@ mount /dev/xvdh /mnt
 echo /dev/xvdh /mnt defaults,nofail 0 2 >> /etc/fstab
 
 yum -y install httpd
-echo "Hello Muthukumaran!" >> /var/www/html/index.html
+echo "Hello Muthukumaran!!" >> /var/www/html/index.html
 service httpd start
 chkconfig httpd on
